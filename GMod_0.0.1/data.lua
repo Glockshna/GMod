@@ -1,4 +1,4 @@
---// Config Options \\--
+----// Config Options \\--
 
 bIncludeInserters = true 				--Include the additional Inserters
 bIncludePlayerResearch = false 			--Include additional Player Crafting Speed researches
