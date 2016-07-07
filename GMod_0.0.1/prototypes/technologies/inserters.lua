@@ -12,6 +12,10 @@ data:extend(
 				type = "unlock-recipe",
 				recipe = "gm-very-fast-inserter"
 			},
+			{
+				type = "unlock-recipe",
+				recipe = "gm-very-fast-filter-inserter"
+			},
 		},
 		prerequisites = {"automation"},
 		unit =
@@ -22,6 +26,7 @@ data:extend(
 		},
 		order = "a-b-a",
 	},
+
 	--Motorized Inserters
 	{
 		type = "technology",
@@ -33,6 +38,10 @@ data:extend(
 			{
 				type = "unlock-recipe",
 				recipe = "gm-motorized-inserter"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "gm-motorized-filter-inserter"
 			},
 		},
 		prerequisites = {"gm-very-fast-inserter","engine"},
@@ -57,6 +66,10 @@ data:extend(
 			{
 				type = "unlock-recipe",
 				recipe = "gm-electric-inserter"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "gm-electric-filter-inserter"
 			},
 		},
 		prerequisites = {"gm-motorized-inserter","electric-engine"},
