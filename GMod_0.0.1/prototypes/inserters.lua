@@ -328,7 +328,149 @@ data:extend(
 		result = "gm-very-fast-filter-inserter",
 		requester_paste_multiplier = 4
 	},
-
+	
+	--Veryfast long Inserter
+	
+	{
+		type = "item",
+		name = "gm-very-fast-long-inserter",
+		icon = iconPath .. "/long-veryfast.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "inserter",
+		order = "c[long-handed-inserter]",
+		place_result = "gm-very-fast-long-inserter",
+		stack_size = 50
+	},
+	{
+		type = "inserter",
+		name = "gm-very-fast-long-inserter",
+		icon = iconPath .. "/long-veryfast.png",
+		flags = {"placeable-neutral", "placeable-player", "player-creation"},
+		minable = {hardness = 0.2, mining_time = 0.5, result = "gm-very-fast-long-inserter"},
+		max_health = 40,
+		corpse = "small-remnants",
+		resistances =
+		{
+			{
+				type = "fire",
+				percent = 90
+			}
+		},
+		collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+		selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+		pickup_position = {0, -2},
+		insert_position = {0, 2.2},
+		energy_per_movement = 5000,
+		energy_per_rotation = 5000,
+		rotation_speed = 0.14,
+		extension_speed = 0.8,
+		hand_size = 1.5,
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "secondary-input",
+			drain = "0.4kW"
+		},
+		fast_replaceable_group = "long-handed-inserter",
+		vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+		working_sound =
+		{
+			match_progress_to_activity = true,
+			sound =
+			{
+				{
+					filename = "__base__/sound/inserter-long-handed-1.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-2.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-3.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-4.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-5.ogg",
+					volume = 0.75
+				}
+			}
+		},
+		hand_base_picture =
+		{
+			filename = handBaseVeryFast,
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_picture =
+		{
+			filename = handClosedLong,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_picture =
+		{
+			filename = handOpenLong,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_base_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		platform_picture =
+		{
+			sheet =
+			{
+				filename = platformVeryFast,
+				priority = "extra-high",
+				width = 46,
+				height = 46,
+				shift = {0.09375, 0}
+			}
+		},
+		circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+		circuit_connector_sprites = inserter_circuit_connector_sprites,
+		circuit_wire_max_distance = inserter_circuit_wire_max_distance
+	},
+	{
+		type = "recipe",
+		name = "gm-very-fast-long-inserter",
+		enabled = false,
+		ingredients =
+		{
+			{"iron-gear-wheel", 2},
+			{"iron-plate", 2},
+			{"gm-very-fast-inserter", 1}
+		},
+		result = "gm-very-fast-long-inserter",
+		requester_paste_multiplier = 4
+	},
+	
 	--Motorized Standard Inserter
 	
 	{
@@ -618,6 +760,147 @@ data:extend(
 		requester_paste_multiplier = 4
 	},
 	
+	--Motorized Long Inserter
+	{
+		type = "item",
+		name = "gm-motorized-long-inserter",
+		icon = iconPath .. "/long-motorized.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "inserter",
+		order = "c[long-handed-inserter]",
+		place_result = "gm-motorized-long-inserter",
+		stack_size = 50
+	},
+	{
+		type = "inserter",
+		name = "gm-motorized-long-inserter",
+		icon = iconPath .. "/long-motorized.png",
+		flags = {"placeable-neutral", "placeable-player", "player-creation"},
+		minable = {hardness = 0.2, mining_time = 0.5, result = "gm-motorized-long-inserter"},
+		max_health = 40,
+		corpse = "small-remnants",
+		resistances =
+		{
+			{
+				type = "fire",
+				percent = 90
+			}
+		},
+		collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+		selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+		pickup_position = {0, -2},
+		insert_position = {0, 2.2},
+		energy_per_movement = 5000,
+		energy_per_rotation = 5000,
+		rotation_speed = 0.20,
+		extension_speed = 0.12,
+		hand_size = 1.5,
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "secondary-input",
+			drain = "0.4kW"
+		},
+		fast_replaceable_group = "long-handed-inserter",
+		vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+		working_sound =
+		{
+			match_progress_to_activity = true,
+			sound =
+			{
+				{
+					filename = "__base__/sound/inserter-long-handed-1.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-2.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-3.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-4.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-5.ogg",
+					volume = 0.75
+				}
+			}
+		},
+		hand_base_picture =
+		{
+			filename = handBaseMotorized,
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_picture =
+		{
+			filename = handClosedLong,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_picture =
+		{
+			filename = handOpenLong,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_base_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		platform_picture =
+		{
+			sheet =
+			{
+				filename = platformMotorized,
+				priority = "extra-high",
+				width = 46,
+				height = 46,
+				shift = {0.09375, 0}
+			}
+		},
+		circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+		circuit_connector_sprites = inserter_circuit_connector_sprites,
+		circuit_wire_max_distance = inserter_circuit_wire_max_distance
+	},
+	{
+		type = "recipe",
+		name = "gm-motorized-long-inserter",
+		enabled = false,
+		ingredients =
+		{
+			{"iron-gear-wheel", 2},
+			{"iron-plate", 2},
+			{"gm-motorized-inserter", 1}
+		},
+		result = "gm-motorized-long-inserter",
+		requester_paste_multiplier = 4
+	},
+	
 	--Electric Standard Inserter
 	
 	{
@@ -764,7 +1047,9 @@ data:extend(
 		result = "gm-electric-inserter",
 		requester_paste_multiplier = 4
 	},
+	
 	--Electric Filter Inserter
+	
 	{
 		type = "item",
 		name = "gm-electric-filter-inserter",
@@ -830,8 +1115,8 @@ data:extend(
 			usage_priority = "secondary-input",
 			drain = "0.5kW"
 		},
-		extension_speed = 0.20,
-		rotation_speed = 0.12,
+		extension_speed = 0.30,
+		rotation_speed = 0.20,
 		fast_replaceable_group = "inserter",
 		filter_count = 5,
 		hand_base_picture =
@@ -904,6 +1189,147 @@ data:extend(
 		result = "gm-electric-filter-inserter",
 		requester_paste_multiplier = 4
 	},
+
+	--Electric Long Inserter
 	
+	{
+		type = "item",
+		name = "gm-electric-long-inserter",
+		icon = iconPath .. "/long-electric.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "inserter",
+		order = "c[long-handed-inserter]",
+		place_result = "gm-electric-long-inserter",
+		stack_size = 50
+	},
+	{
+		type = "inserter",
+		name = "gm-electric-long-inserter",
+		icon = iconPath .. "/long-electric.png",
+		flags = {"placeable-neutral", "placeable-player", "player-creation"},
+		minable = {hardness = 0.2, mining_time = 0.5, result = "gm-electric-long-inserter"},
+		max_health = 40,
+		corpse = "small-remnants",
+		resistances =
+		{
+			{
+				type = "fire",
+				percent = 90
+			}
+		},
+		collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+		selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+		pickup_position = {0, -2},
+		insert_position = {0, 2.2},
+		energy_per_movement = 5000,
+		energy_per_rotation = 5000,
+		rotation_speed = 0.30,
+		extension_speed = 0.20,
+		hand_size = 1.5,
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "secondary-input",
+			drain = "0.4kW"
+		},
+		fast_replaceable_group = "long-handed-inserter",
+		vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+		working_sound =
+		{
+			match_progress_to_activity = true,
+			sound =
+			{
+				{
+					filename = "__base__/sound/inserter-long-handed-1.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-2.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-3.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-4.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-long-handed-5.ogg",
+					volume = 0.75
+				}
+			}
+		},
+		hand_base_picture =
+		{
+			filename = handBaseElectric,
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_picture =
+		{
+			filename = handClosedLong,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_picture =
+		{
+			filename = handOpenLong,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_base_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		platform_picture =
+		{
+			sheet =
+			{
+				filename = platformElectric,
+				priority = "extra-high",
+				width = 46,
+				height = 46,
+				shift = {0.09375, 0}
+			}
+		},
+		circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+		circuit_connector_sprites = inserter_circuit_connector_sprites,
+		circuit_wire_max_distance = inserter_circuit_wire_max_distance
+	},
+	{
+		type = "recipe",
+		name = "gm-electric-long-inserter",
+		enabled = false,
+		ingredients =
+		{
+			{"iron-gear-wheel", 2},
+			{"iron-plate", 2},
+			{"gm-electric-inserter", 1}
+		},
+		result = "gm-electric-long-inserter",
+		requester_paste_multiplier = 4
+	},
 	
 })
