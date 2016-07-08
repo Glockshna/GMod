@@ -10,6 +10,7 @@ bIncludeUpgradedBelts = false 			--Include faster variants of Transport Belts
 
 if bIncludeInserters == true then
 	require("prototypes.technologies.inserters")
+	require("prototypes.inserter-groups")
 	require("prototypes.inserters")
 end
 

@@ -1,4 +1,12 @@
 
+--[[//Inserter Speed Ratios \\--
+
+Rotation
+Normal -> Long = 37.5% Rotation Speed
+Normal -> Side = 45.5% Rotation Speed
+
+
+--]]
 --// Paths \\--
 
 spritePath		= 	"__GMod__/graphics/entity/inserters"
@@ -48,8 +56,8 @@ data:extend(
 		name = "gm-very-fast-inserter",
 		icon = iconPath .. "/standard-veryfast.png",
 		flags = {"goes-to-quickbar"},
-		subgroup = "inserter",
-		order = "d[fast-inserter]",
+		subgroup = "gm-standard-inserters",
+		order = "a",
 		place_result = "gm-very-fast-inserter",
 		stack_size = 50
 	},
@@ -186,7 +194,296 @@ data:extend(
 		result = "gm-very-fast-inserter",
 		requester_paste_multiplier = 4
 	},	
+		
+	--Very Fast Left Inserter
 	
+	{
+		type = "item",
+		name = "gm-very-fast-inserter-left",
+		icon = iconPath .. "/standard-left-veryfast.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "gm-left-inserters",
+		order = "a",
+		place_result = "gm-very-fast-inserter-left",
+		stack_size = 50
+	},
+	{
+		type = "inserter",
+		name = "gm-very-fast-inserter-left",
+		icon = iconPath .. "/standard-left-veryfast.png",
+		flags = {"placeable-neutral", "placeable-player", "player-creation"},
+		minable =
+		{
+			hardness = 0.2,
+			mining_time = 0.5,
+			result = "gm-very-fast-inserter-left"
+		},
+		max_health = 40,
+		corpse = "small-remnants",
+		resistances =
+		{
+			{
+				type = "fire",
+				percent = 90
+			}
+		},
+		collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+		selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+		pickup_position = {0, -1},
+		insert_position = {1.2, 0},
+		energy_per_movement = 7000,
+		energy_per_rotation = 7000,
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "secondary-input",
+			drain = "0.5kW"
+		},
+		extension_speed = 0.14,
+		rotation_speed = 0.0364,
+		fast_replaceable_group = "inserter",
+		vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+		working_sound =
+		{
+			match_progress_to_activity = true,
+			sound =
+			{
+				{
+					filename = "__base__/sound/inserter-fast-1.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-2.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-3.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-4.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-5.ogg",
+					volume = 0.75
+				}
+			}
+		},
+		hand_base_picture =
+		{
+			filename = handBaseVeryFast,
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_picture =
+		{
+			filename = handClosedNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_picture =
+		{
+			filename = handOpenNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_base_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		platform_picture =
+		{
+			sheet =
+			{
+				filename = platformVeryFast,
+				priority = "extra-high",
+				width = 46,
+				height = 46,
+				shift = {0.09375, 0}
+			}
+		},
+		circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+		circuit_connector_sprites = inserter_circuit_connector_sprites,
+		circuit_wire_max_distance = inserter_circuit_wire_max_distance
+	},	
+	{
+		type = "recipe",
+		name = "gm-very-fast-inserter-left",
+		enabled = false,
+		ingredients =
+		{
+			{"electronic-circuit", 2},
+			{"iron-gear-wheel", 5},
+			{"fast-inserter", 1}
+		},
+		result = "gm-very-fast-inserter-left",
+		requester_paste_multiplier = 4
+	},	
+	
+	{
+		type = "item",
+		name = "gm-very-fast-inserter-right",
+		icon = iconPath .. "/standard-right-veryfast.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "gm-right-inserters",
+		order = "a",
+		place_result = "gm-very-fast-inserter-right",
+		stack_size = 50
+	},
+	{
+		type = "inserter",
+		name = "gm-very-fast-inserter-right",
+		icon = iconPath .. "/standard-right-veryfast.png",
+		flags = {"placeable-neutral", "placeable-player", "player-creation"},
+		minable =
+		{
+			hardness = 0.2,
+			mining_time = 0.5,
+			result = "gm-very-fast-inserter-right"
+		},
+		max_health = 40,
+		corpse = "small-remnants",
+		resistances =
+		{
+			{
+				type = "fire",
+				percent = 90
+			}
+		},
+		collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+		selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+		pickup_position = {0, -1},
+		insert_position = {-1.2, 0},
+		energy_per_movement = 7000,
+		energy_per_rotation = 7000,
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "secondary-input",
+			drain = "0.5kW"
+		},
+		extension_speed = 0.14,
+		rotation_speed = 0.0364,
+		fast_replaceable_group = "inserter",
+		vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+		working_sound =
+		{
+			match_progress_to_activity = true,
+			sound =
+			{
+				{
+					filename = "__base__/sound/inserter-fast-1.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-2.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-3.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-4.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-5.ogg",
+					volume = 0.75
+				}
+			}
+		},
+		hand_base_picture =
+		{
+			filename = handBaseVeryFast,
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_picture =
+		{
+			filename = handClosedNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_picture =
+		{
+			filename = handOpenNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_base_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		platform_picture =
+		{
+			sheet =
+			{
+				filename = platformVeryFast,
+				priority = "extra-high",
+				width = 46,
+				height = 46,
+				shift = {0.09375, 0}
+			}
+		},
+		circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+		circuit_connector_sprites = inserter_circuit_connector_sprites,
+		circuit_wire_max_distance = inserter_circuit_wire_max_distance
+	},	
+	{
+		type = "recipe",
+		name = "gm-very-fast-inserter-right",
+		enabled = false,
+		ingredients =
+		{
+			{"electronic-circuit", 2},
+			{"iron-gear-wheel", 5},
+			{"fast-inserter", 1}
+		},
+		result = "gm-very-fast-inserter-right",
+		requester_paste_multiplier = 4
+	},	
 	--Veryfast Filter Inserter
 	
 	{
@@ -194,8 +491,8 @@ data:extend(
 		name = "gm-very-fast-filter-inserter",
 		icon = iconPath .. "/filter-veryfast.png",
 		flags = {"goes-to-quickbar"},
-		subgroup = "inserter",
-		order = "e[filter-inserter]",
+		subgroup = "gm-filter-inserters",
+		order = "a",
 		place_result = "gm-very-fast-filter-inserter",
 		stack_size = 50
 	},
@@ -336,8 +633,8 @@ data:extend(
 		name = "gm-very-fast-long-inserter",
 		icon = iconPath .. "/long-veryfast.png",
 		flags = {"goes-to-quickbar"},
-		subgroup = "inserter",
-		order = "c[long-handed-inserter]",
+		subgroup = "gm-long-inserters",
+		order = "a",
 		place_result = "gm-very-fast-long-inserter",
 		stack_size = 50
 	},
@@ -362,8 +659,8 @@ data:extend(
 		insert_position = {0, 2.2},
 		energy_per_movement = 5000,
 		energy_per_rotation = 5000,
-		rotation_speed = 0.14,
-		extension_speed = 0.8,
+		rotation_speed = 0.08,
+		extension_speed = 0.3,
 		hand_size = 1.5,
 		energy_source =
 		{
@@ -478,8 +775,8 @@ data:extend(
 		name = "gm-motorized-inserter",
 		icon = iconPath .. "/standard-motorized.png",
 		flags = {"goes-to-quickbar"},
-		subgroup = "inserter",
-		order = "d[gm-very-fast-inserter]",
+		subgroup = "gm-standard-inserters",
+		order = "b",
 		place_result = "gm-motorized-inserter",
 		stack_size = 50
 	},
@@ -618,6 +915,298 @@ data:extend(
 		requester_paste_multiplier = 4
 	},	
 	
+	--Motorized Left Inserter
+	
+	{
+		type = "item",
+		name = "gm-motorized-inserter-left",
+		icon = iconPath .. "/standard-left-motorized.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "gm-left-inserters",
+		order = "b",
+		place_result = "gm-motorized-inserter-left",
+		stack_size = 50
+	},
+	{
+		type = "inserter",
+		name = "gm-motorized-inserter-left",
+		icon = iconPath .. "/standard-left-motorized.png",
+		flags = {"placeable-neutral", "placeable-player", "player-creation"},
+		minable =
+		{
+			hardness = 0.2,
+			mining_time = 0.5,
+			result = "gm-motorized-inserter-left"
+		},
+		max_health = 40,
+		corpse = "small-remnants",
+		resistances =
+		{
+			{
+				type = "fire",
+				percent = 90
+			}
+		},
+		collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+		selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+		pickup_position = {0, -1},
+		insert_position = {1.2, 0},
+		energy_per_movement = 7000,
+		energy_per_rotation = 7000,
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "secondary-input",
+			drain = "0.5kW"
+		},
+		extension_speed = 0.20,
+		rotation_speed = 0.054,
+		fast_replaceable_group = "inserter",
+		vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+		working_sound =
+		{
+			match_progress_to_activity = true,
+			sound =
+			{
+				{
+					filename = "__base__/sound/inserter-fast-1.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-2.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-3.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-4.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-5.ogg",
+					volume = 0.75
+				}
+			}
+		},
+		hand_base_picture =
+		{
+			filename = handBaseMotorized,
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_picture =
+		{
+			filename = handClosedNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_picture =
+		{
+			filename = handOpenNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_base_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		platform_picture =
+		{
+			sheet =
+			{
+				filename = platformMotorized,
+				priority = "extra-high",
+				width = 46,
+				height = 46,
+				shift = {0.09375, 0}
+			}
+		},
+		circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+		circuit_connector_sprites = inserter_circuit_connector_sprites,
+		circuit_wire_max_distance = inserter_circuit_wire_max_distance
+	},	
+	{
+		type = "recipe",
+		name = "gm-motorized-inserter-left",
+		enabled = false,
+		ingredients =
+		{
+			{"electronic-circuit", 2},
+			{"iron-gear-wheel", 5},
+			{"engine-unit", 1},
+			{"gm-very-fast-inserter", 1}
+		},
+		result = "gm-motorized-inserter-left",
+		requester_paste_multiplier = 4
+	},	
+	
+	{
+		type = "item",
+		name = "gm-motorized-inserter-right",
+		icon = iconPath .. "/standard-right-motorized.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "gm-right-inserters",
+		order = "b",
+		place_result = "gm-motorized-inserter-right",
+		stack_size = 50
+	},
+	{
+		type = "inserter",
+		name = "gm-motorized-inserter-right",
+		icon = iconPath .. "/standard-right-motorized.png",
+		flags = {"placeable-neutral", "placeable-player", "player-creation"},
+		minable =
+		{
+			hardness = 0.2,
+			mining_time = 0.5,
+			result = "gm-motorized-inserter-right"
+		},
+		max_health = 40,
+		corpse = "small-remnants",
+		resistances =
+		{
+			{
+				type = "fire",
+				percent = 90
+			}
+		},
+		collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+		selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+		pickup_position = {0, -1},
+		insert_position = {-1.2, 0},
+		energy_per_movement = 7000,
+		energy_per_rotation = 7000,
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "secondary-input",
+			drain = "0.5kW"
+		},
+		extension_speed = 0.20,
+		rotation_speed = 0.054,
+		fast_replaceable_group = "inserter",
+		vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+		working_sound =
+		{
+			match_progress_to_activity = true,
+			sound =
+			{
+				{
+					filename = "__base__/sound/inserter-fast-1.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-2.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-3.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-4.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-5.ogg",
+					volume = 0.75
+				}
+			}
+		},
+		hand_base_picture =
+		{
+			filename = handBaseMotorized,
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_picture =
+		{
+			filename = handClosedNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_picture =
+		{
+			filename = handOpenNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_base_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		platform_picture =
+		{
+			sheet =
+			{
+				filename = platformMotorized,
+				priority = "extra-high",
+				width = 46,
+				height = 46,
+				shift = {0.09375, 0}
+			}
+		},
+		circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+		circuit_connector_sprites = inserter_circuit_connector_sprites,
+		circuit_wire_max_distance = inserter_circuit_wire_max_distance
+	},	
+	{
+		type = "recipe",
+		name = "gm-motorized-inserter-right",
+		enabled = false,
+		ingredients =
+		{
+			{"electronic-circuit", 2},
+			{"iron-gear-wheel", 5},
+			{"engine-unit", 1},
+			{"gm-very-fast-inserter", 1}
+		},
+		result = "gm-motorized-inserter-right",
+		requester_paste_multiplier = 4
+	},	
+	
 	--Motorized Filter Inserter
 	
 	{
@@ -625,8 +1214,8 @@ data:extend(
 		name = "gm-motorized-filter-inserter",
 		icon = iconPath .. "/filter-motorized.png",
 		flags = {"goes-to-quickbar"},
-		subgroup = "inserter",
-		order = "e[gm-very-fast-filter-inserter]",
+		subgroup = "gm-filter-inserters",
+		order = "b",
 		place_result = "gm-motorized-filter-inserter",
 		stack_size = 50
 	},
@@ -766,8 +1355,8 @@ data:extend(
 		name = "gm-motorized-long-inserter",
 		icon = iconPath .. "/long-motorized.png",
 		flags = {"goes-to-quickbar"},
-		subgroup = "inserter",
-		order = "c[long-handed-inserter]",
+		subgroup = "gm-long-inserters",
+		order = "b",
 		place_result = "gm-motorized-long-inserter",
 		stack_size = 50
 	},
@@ -792,8 +1381,8 @@ data:extend(
 		insert_position = {0, 2.2},
 		energy_per_movement = 5000,
 		energy_per_rotation = 5000,
-		rotation_speed = 0.20,
-		extension_speed = 0.12,
+		rotation_speed = 0.114,
+		extension_speed = 0.3,
 		hand_size = 1.5,
 		energy_source =
 		{
@@ -908,8 +1497,8 @@ data:extend(
 		name = "gm-electric-inserter",
 		icon = iconPath .. "/standard-electric.png",
 		flags = {"goes-to-quickbar"},
-		subgroup = "inserter",
-		order = "d[gm-motorized-inserter]",
+		subgroup = "gm-standard-inserters",
+		order = "c",
 		place_result = "gm-electric-inserter",
 		stack_size = 50
 	},
@@ -1048,6 +1637,296 @@ data:extend(
 		requester_paste_multiplier = 4
 	},
 	
+	{
+		type = "item",
+		name = "gm-electric-inserter-left",
+		icon = iconPath .. "/standard-left-electric.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "gm-left-inserters",
+		order = "c",
+		place_result = "gm-electric-inserter-left",
+		stack_size = 50
+	},
+	{
+		type = "inserter",
+		name = "gm-electric-inserter-left",
+		icon = iconPath .. "/standard-left-electric.png",
+		flags = {"placeable-neutral", "placeable-player", "player-creation"},
+		minable =
+		{
+			hardness = 0.2,
+			mining_time = 0.5,
+			result = "gm-electric-inserter-left"
+		},
+		max_health = 40,
+		corpse = "small-remnants",
+		resistances =
+		{
+			{
+				type = "fire",
+				percent = 90
+			}
+		},
+		collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+		selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+		pickup_position = {0, -1},
+		insert_position = {1.2, 0},
+		energy_per_movement = 7000,
+		energy_per_rotation = 7000,
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "secondary-input",
+			drain = "0.5kW"
+		},
+		extension_speed = 0.30,
+		rotation_speed = 0.09,
+		fast_replaceable_group = "inserter",
+		vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+		working_sound =
+		{
+			match_progress_to_activity = true,
+			sound =
+			{
+				{
+					filename = "__base__/sound/inserter-fast-1.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-2.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-3.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-4.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-5.ogg",
+					volume = 0.75
+				}
+			}
+		},
+		hand_base_picture =
+		{
+			filename = handBaseElectric,
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_picture =
+		{
+			filename = handClosedNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_picture =
+		{
+			filename = handOpenNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_base_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		platform_picture =
+		{
+			sheet =
+			{
+				filename = platformElectric,
+				priority = "extra-high",
+				width = 46,
+				height = 46,
+				shift = {0.09375, 0}
+			}
+		},
+		circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+		circuit_connector_sprites = inserter_circuit_connector_sprites,
+		circuit_wire_max_distance = inserter_circuit_wire_max_distance
+	},
+	{
+		type = "recipe",
+		name = "gm-electric-inserter-left",
+		enabled = false,
+		ingredients =
+		{
+			{"advanced-circuit", 1},
+			{"iron-gear-wheel", 5},
+			{"electric-engine-unit", 1},
+			{"gm-very-fast-inserter", 1}
+		},
+		result = "gm-electric-inserter-left",
+		requester_paste_multiplier = 4
+	},
+		
+	{
+		type = "item",
+		name = "gm-electric-inserter-right",
+		icon = iconPath .. "/standard-right-electric.png",
+		flags = {"goes-to-quickbar"},
+		subgroup = "gm-right-inserters",
+		order = "c",
+		place_result = "gm-electric-inserter-right",
+		stack_size = 50
+	},
+	{
+		type = "inserter",
+		name = "gm-electric-inserter-right",
+		icon = iconPath .. "/standard-right-electric.png",
+		flags = {"placeable-neutral", "placeable-player", "player-creation"},
+		minable =
+		{
+			hardness = 0.2,
+			mining_time = 0.5,
+			result = "gm-electric-inserter-right"
+		},
+		max_health = 40,
+		corpse = "small-remnants",
+		resistances =
+		{
+			{
+				type = "fire",
+				percent = 90
+			}
+		},
+		collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+		selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+		pickup_position = {0, -1},
+		insert_position = {-1.2, 0},
+		energy_per_movement = 7000,
+		energy_per_rotation = 7000,
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "secondary-input",
+			drain = "0.5kW"
+		},
+		extension_speed = 0.30,
+		rotation_speed = 0.09,
+		fast_replaceable_group = "inserter",
+		vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+		working_sound =
+		{
+			match_progress_to_activity = true,
+			sound =
+			{
+				{
+					filename = "__base__/sound/inserter-fast-1.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-2.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-3.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-4.ogg",
+					volume = 0.75
+				},
+				{
+					filename = "__base__/sound/inserter-fast-5.ogg",
+					volume = 0.75
+				}
+			}
+		},
+		hand_base_picture =
+		{
+			filename = handBaseElectric,
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_picture =
+		{
+			filename = handClosedNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_picture =
+		{
+			filename = handOpenNormal,
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_base_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+			priority = "extra-high",
+			width = 8,
+			height = 34
+		},
+		hand_closed_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		hand_open_shadow =
+		{
+			filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+			priority = "extra-high",
+			width = 18,
+			height = 41
+		},
+		platform_picture =
+		{
+			sheet =
+			{
+				filename = platformElectric,
+				priority = "extra-high",
+				width = 46,
+				height = 46,
+				shift = {0.09375, 0}
+			}
+		},
+		circuit_wire_connection_point = inserter_circuit_wire_connection_point,
+		circuit_connector_sprites = inserter_circuit_connector_sprites,
+		circuit_wire_max_distance = inserter_circuit_wire_max_distance
+	},
+	{
+		type = "recipe",
+		name = "gm-electric-inserter-right",
+		enabled = false,
+		ingredients =
+		{
+			{"advanced-circuit", 1},
+			{"iron-gear-wheel", 5},
+			{"electric-engine-unit", 1},
+			{"gm-very-fast-inserter", 1}
+		},
+		result = "gm-electric-inserter-right",
+		requester_paste_multiplier = 4
+	},
+	
 	--Electric Filter Inserter
 	
 	{
@@ -1055,8 +1934,8 @@ data:extend(
 		name = "gm-electric-filter-inserter",
 		icon = iconPath .. "/filter-electric.png",
 		flags = {"goes-to-quickbar"},
-		subgroup = "inserter",
-		order = "e[gm-very-fast-filter-inserter]",
+		subgroup = "gm-filter-inserters",
+		order = "c",
 		place_result = "gm-electric-filter-inserter",
 		stack_size = 50
 	},
@@ -1197,8 +2076,8 @@ data:extend(
 		name = "gm-electric-long-inserter",
 		icon = iconPath .. "/long-electric.png",
 		flags = {"goes-to-quickbar"},
-		subgroup = "inserter",
-		order = "c[long-handed-inserter]",
+		subgroup = "gm-long-inserters",
+		order = "c",
 		place_result = "gm-electric-long-inserter",
 		stack_size = 50
 	},
@@ -1223,8 +2102,8 @@ data:extend(
 		insert_position = {0, 2.2},
 		energy_per_movement = 5000,
 		energy_per_rotation = 5000,
-		rotation_speed = 0.30,
-		extension_speed = 0.20,
+		rotation_speed = 0.171,
+		extension_speed = 0.3,
 		hand_size = 1.5,
 		energy_source =
 		{
