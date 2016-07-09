@@ -52,4 +52,18 @@ data:extend(
 		order = 6,
 	},
 
+	{
+		type = "item-subgroup",
+		name = "gm-left-filter-inserters",
+		group = "GMod",
+		order = 7,
+	},
+
+	{
+		type = "item-subgroup",
+		name = "gm-right-filter-inserters",
+		group = "GMod",
+		order = 8,
+	},
+
 })

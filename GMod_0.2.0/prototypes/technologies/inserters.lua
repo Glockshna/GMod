@@ -28,6 +28,15 @@ data:extend(
 				type = "unlock-recipe",
 				recipe = "gm-very-fast-inserter-right"
 			},
+
+			{
+				type = "unlock-recipe",
+				recipe = "gm-very-fast-inserter-left-filter"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "gm-very-fast-inserter-right-filter"
+			},
 		},
 		prerequisites = {"automation"},
 		unit =
@@ -66,6 +75,14 @@ data:extend(
 			{
 				type = "unlock-recipe",
 				recipe = "gm-motorized-inserter-right"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "gm-motorized-inserter-left-filter"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "gm-motorized-inserter-right-filter"
 			},
 		},
 		prerequisites = {"gm-very-fast-inserter","engine"},
@@ -106,6 +123,14 @@ data:extend(
 			{
 				type = "unlock-recipe",
 				recipe = "gm-electric-inserter-right"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "gm-electric-inserter-left-filter"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "gm-electric-inserter-right-filter"
 			},
 		},
 		prerequisites = {"gm-motorized-inserter","electric-engine"},
