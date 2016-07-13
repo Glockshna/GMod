@@ -42,7 +42,7 @@ data:extend(
 				recipe = "gm-very-fast-extra-long-inserter"
 			},
 		},
-		prerequisites = {"automation"},
+		prerequisites = {"automation","engine"},
 		unit =
 		{
 			count = 20,
@@ -93,7 +93,7 @@ data:extend(
 				recipe = "gm-motorized-extra-long-inserter"
 			},
 		},
-		prerequisites = {"gm-very-fast-inserter","engine"},
+		prerequisites = {"gm-very-fast-inserter"},
 		unit =
 		{
 			count = 20,
