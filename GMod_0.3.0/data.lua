@@ -12,6 +12,8 @@ bIncludeRobotResearch = false			--Include additional robot speed and carryweight
 
 if bIncludeInserters == true then
 	require("prototypes.technologies.inserters")
+	table.insert(data.raw["technology"]["engine"].effects,{type="unlock-recipe",recipe="gm-servo"})
+	table.insert(data.raw["technology"]["electric-engine"].effects,{type="unlock-recipe",recipe="gm-adv-servo"})
 	require("prototypes.inserter-groups")
 	require("prototypes.inserters")
 end

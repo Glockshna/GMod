@@ -43,7 +43,58 @@ handClosedStack		=	spritePath .. "/arms/hand-closed-stack.png"			--White
 
 --\\   End Sprite Definitions   //--
 
+data:extend(
+	{ -- Intermediates
+		{
+			type = "item",
+			name = "gm-servo",
+			icon = iconPath .. "/servo.png",
+			flags = {"goes-to-main-inventory"},
+			subgroup = "intermediate-product",
+			order = "g[gm-servo]",
+			stack_size = 50
+		},
+		{
+			type = "recipe",
+			name = "gm-servo",
+			energy_required = 5,
+			category = "advanced-crafting",
+			ingredients =
+			{
+				{"iron-plate", 3},
+				{"electronic-circuit", 2}
+			},
+			result_count = 2,
+			result = "gm-servo",
+			enabled = false
+		},
+		{
+			type = "item",
+			name = "gm-adv-servo",
+			icon = iconPath .. "/adv-servo.png",
+			flags = {"goes-to-main-inventory"},
+			subgroup = "intermediate-product",
+			order = "g[gm-adv-servo]",
+			stack_size = 50
+		},
+		{
+			type = "recipe",
+			name = "gm-adv-servo",
+			energy_required = 5,
+			category = "advanced-crafting",
+			ingredients =
+			{
+				{"steel-plate", 1},
+				{"advanced-circuit", 2},
+				{type = "fluid", name = "lubricant", amount = 1}
+			},
+			result_count = 2,
+			result = "gm-adv-servo",
+			enabled = false
+		}
 
+	}
+)
 
 data:extend(
 	{	--Very Fast Inserters
@@ -184,7 +235,7 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
+				{"gm-servo", 1},
 				{"fast-inserter", 1}
 			},
 			result = "gm-very-fast-inserter",
@@ -328,8 +379,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-gear-wheel", 2},
+				{"gm-very-fast-inserter", 1}
 			},
 			result = "gm-very-fast-inserter-left",
 			requester_paste_multiplier = 4
@@ -472,8 +523,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"electronic-circuit", 4},
+				{"gm-very-fast-inserter-left", 1}
 			},
 			result = "gm-very-fast-inserter-left-filter",
 			requester_paste_multiplier = 4
@@ -616,8 +667,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-gear-wheel", 2},
+				{"gm-very-fast-inserter", 1}
 			},
 			result = "gm-very-fast-inserter-right",
 			requester_paste_multiplier = 4
@@ -760,8 +811,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"electronic-circuit", 4},
+				{"gm-very-fast-inserter-right", 1}
 			},
 			result = "gm-very-fast-inserter-right-filter",
 			requester_paste_multiplier = 4
@@ -901,8 +952,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"electronic-circuit", 4},
+				{"gm-very-fast-inserter", 1}
 			},
 			result = "gm-very-fast-filter-inserter",
 			requester_paste_multiplier = 4
@@ -1042,8 +1093,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-plate", 4},
+				{"gm-very-fast-inserter", 1}
 			},
 			result = "gm-very-fast-long-inserter",
 			requester_paste_multiplier = 4
@@ -1183,8 +1234,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-plate", 4},
+				{"gm-very-fast-long-inserter", 1}
 			},
 			result = "gm-very-fast-extra-long-inserter",
 			requester_paste_multiplier = 4
@@ -1331,8 +1382,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"gm-servo", 3},
+				{"gm-very-fast-inserter", 1}
 			},
 			result = "gm-motorized-inserter",
 			requester_paste_multiplier = 4
@@ -1476,8 +1527,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-gear-wheel", 2},
+				{"gm-motorized-inserter", 1}
 			},
 			result = "gm-motorized-inserter-left",
 			requester_paste_multiplier = 4
@@ -1622,8 +1673,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"electronic-circuit", 4},
+				{"gm-motorized-inserter-left", 1}
 			},
 			result = "gm-motorized-inserter-left-filter",
 			requester_paste_multiplier = 4
@@ -1760,15 +1811,15 @@ data:extend(
 			circuit_wire_connection_point = inserter_circuit_wire_connection_point,
 			circuit_connector_sprites = inserter_circuit_connector_sprites,
 			circuit_wire_max_distance = inserter_circuit_wire_max_distance
-		},	
+		},
 		{
 			type = "recipe",
 			name = "gm-motorized-inserter-right",
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-gear-wheel", 2},
+				{"gm-motorized-inserter", 1}
 			},
 			result = "gm-motorized-inserter-right",
 			requester_paste_multiplier = 4
@@ -1912,8 +1963,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"electronic-circuit", 4},
+				{"gm-motorized-inserter-right", 1}
 			},
 			result = "gm-motorized-inserter-right-filter",
 			requester_paste_multiplier = 4
@@ -2053,8 +2104,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"electronic-circuit", 4},
+				{"gm-motorized-inserter", 1}
 			},
 			result = "gm-motorized-filter-inserter",
 			requester_paste_multiplier = 4
@@ -2193,8 +2244,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-plate", 4},
+				{"gm-motorized-inserter", 1}
 			},
 			result = "gm-motorized-long-inserter",
 			requester_paste_multiplier = 4
@@ -2332,8 +2383,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-plate", 4},
+				{"gm-motorized-long-inserter", 1}
 			},
 			result = "gm-motorized-extra-long-inserter",
 			requester_paste_multiplier = 4
@@ -2478,8 +2529,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"gm-adv-servo", 1},
+				{"gm-motorized-inserter", 1}
 			},
 			result = "gm-electric-inserter",
 			requester_paste_multiplier = 4
@@ -2621,8 +2672,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-gear-wheel", 2},
+				{"gm-electric-inserter", 1}
 			},
 			result = "gm-electric-inserter-left",
 			requester_paste_multiplier = 4
@@ -2765,8 +2816,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"electronic-circuit", 4},
+				{"gm-electric-inserter-left", 1}
 			},
 			result = "gm-electric-inserter-left-filter",
 			requester_paste_multiplier = 4
@@ -2908,8 +2959,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-gear-wheel", 2},
+				{"gm-electric-inserter", 1}
 			},
 			result = "gm-electric-inserter-right",
 			requester_paste_multiplier = 4
@@ -3052,8 +3103,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"electronic-circuit", 4},
+				{"gm-electric-inserter-right", 1}
 			},
 			result = "gm-electric-inserter-right-filter",
 			requester_paste_multiplier = 4
@@ -3193,8 +3244,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"electronic-circuit", 4},
+				{"gm-electric-inserter", 1}
 			},
 			result = "gm-electric-filter-inserter",
 			requester_paste_multiplier = 4
@@ -3334,8 +3385,8 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-plate", 4},
+				{"gm-electric-inserter", 1}
 			},
 			result = "gm-electric-long-inserter",
 			requester_paste_multiplier = 4
@@ -3473,10 +3524,11 @@ data:extend(
 			enabled = false,
 			ingredients =
 			{
-				{"iron-gear-wheel", 5},
-				{"fast-inserter", 1}
+				{"iron-plate", 4},
+				{"gm-electric-long-inserter", 1}
 			},
 			result = "gm-electric-extra-long-inserter",
 			requester_paste_multiplier = 4
-		}
-	})
+		},
+	}
+)
