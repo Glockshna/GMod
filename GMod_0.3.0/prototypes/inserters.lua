@@ -953,7 +953,7 @@ data:extend(
 			ingredients =
 			{
 				{"electronic-circuit", 4},
-				{"gm-very-fast-inserter-left", 1}
+				{"gm-very-fast-inserter", 1}
 			},
 			result = "gm-very-fast-filter-inserter",
 			requester_paste_multiplier = 4
