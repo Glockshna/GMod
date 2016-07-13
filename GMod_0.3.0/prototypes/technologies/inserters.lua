@@ -96,7 +96,7 @@ data:extend(
 		prerequisites = {"gm-very-fast-inserter"},
 		unit =
 		{
-			count = 20,
+			count = 40,
 			ingredients = {{"science-pack-1", 1},{"science-pack-2",1}},			
 			time = 10
 		},
@@ -148,8 +148,8 @@ data:extend(
 		prerequisites = {"gm-motorized-inserter","electric-engine"},
 		unit =
 		{
-			count = 20,
-			ingredients = {{"science-pack-1", 1},{"science-pack-2",1}},			
+			count = 50,
+			ingredients = {{"science-pack-1", 1},{"science-pack-2",1},{"science-pack-3",1}},			
 			time = 10
 		},
 		order = "a-b-a",
