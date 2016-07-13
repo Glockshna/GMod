@@ -57,7 +57,7 @@ data:extend(
 		{
 			type = "recipe",
 			name = "gm-servo",
-			energy_required = 20,
+			energy_required = 5,
 			category = "advanced-crafting",
 			ingredients =
 			{
@@ -80,7 +80,7 @@ data:extend(
 		{
 			type = "recipe",
 			name = "gm-adv-servo",
-			energy_required = 20,
+			energy_required = 5,
 			category = "advanced-crafting",
 			ingredients =
 			{
